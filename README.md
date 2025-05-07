@@ -12,7 +12,7 @@ A simple Minesweeper game built with the Godot Engine.
 
 ## 🛠️ Built With
 
-- [Godot Engine](https://godotengine.org/) (version 3.x or 4.x – update as needed)
+- [Godot Engine](https://godotengine.org/) (version 4.x – update as needed)
 - GDScript
 
 ## 🚀 Getting Started
