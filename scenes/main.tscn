@@ -1,0 +1,72 @@
+[gd_scene load_steps=9 format=3 uid="uid://514t3cghwemf"]
+
+[ext_resource type="Script" uid="uid://l5sathpfie5" path="res://scripts/restart_btn.gd" id="3_f1cyw"]
+[ext_resource type="Script" uid="uid://diqjg5v2oyg5v" path="res://scripts/game_manager.gd" id="3_tbgi4"]
+[ext_resource type="Script" uid="uid://ncu8fgdepcp8" path="res://scripts/solve_btn.gd" id="4_0jhw3"]
+[ext_resource type="Script" uid="uid://c3ddnnysu7n1k" path="res://scripts/game_logic.gd" id="5_fu7af"]
+[ext_resource type="PackedScene" uid="uid://0id10orj6l8d" path="res://scenes/board.tscn" id="5_tefeu"]
+[ext_resource type="PackedScene" uid="uid://bhlwwjvsnlrgm" path="res://scenes/solver.tscn" id="6_fx74m"]
+[ext_resource type="Script" uid="uid://cugy6orv70vj6" path="res://scripts/stopwatch.gd" id="7_o6xl0"]
+[ext_resource type="Script" uid="uid://tpbq8pjhbsie" path="res://scenes/remaining_flag.gd" id="8_tipki"]
+
+[node name="Minesweeper" type="Node2D"]
+
+[node name="GameManager" type="Node2D" parent="."]
+script = ExtResource("3_tbgi4")
+
+[node name="GameLogic" type="Node2D" parent="GameManager"]
+script = ExtResource("5_fu7af")
+
+[node name="Board" parent="GameManager/GameLogic" instance=ExtResource("5_tefeu")]
+
+[node name="Solver" parent="GameManager/GameLogic" instance=ExtResource("6_fx74m")]
+
+[node name="UI" type="Node2D" parent="GameManager"]
+
+[node name="Camera2D" type="Camera2D" parent="GameManager/UI"]
+position = Vector2(320, 240)
+
+[node name="RestartBtn" type="Button" parent="GameManager/UI"]
+offset_left = 43.0
+offset_top = 34.0
+offset_right = 51.0
+offset_bottom = 42.0
+script = ExtResource("3_f1cyw")
+
+[node name="SolveBtn" type="Button" parent="GameManager/UI"]
+offset_left = 43.0
+offset_top = 88.0
+offset_right = 51.0
+offset_bottom = 96.0
+script = ExtResource("4_0jhw3")
+
+[node name="DifficultyBtn" type="OptionButton" parent="GameManager/UI"]
+offset_left = 182.0
+offset_top = 27.0
+offset_right = 329.0
+offset_bottom = 58.0
+item_count = 4
+popup/item_0/text = "BEGINNER"
+popup/item_0/id = 0
+popup/item_1/text = "INTERMEDIATE"
+popup/item_1/id = 1
+popup/item_2/text = "EXPERT"
+popup/item_2/id = 2
+popup/item_3/text = "CUSTOM"
+popup/item_3/id = 3
+
+[node name="StopWatch" type="Label" parent="GameManager/UI"]
+offset_left = 408.0
+offset_top = 33.0
+offset_right = 448.0
+offset_bottom = 56.0
+script = ExtResource("7_o6xl0")
+
+[node name="RemainingFlag" type="Label" parent="GameManager/UI"]
+offset_left = 515.0
+offset_top = 34.0
+offset_right = 555.0
+offset_bottom = 57.0
+script = ExtResource("8_tipki")
+
+[connection signal="item_selected" from="GameManager/UI/DifficultyBtn" to="GameManager" method="_on_difficulty_btn_item_selected"]

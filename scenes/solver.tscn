@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhlwwjvsnlrgm"]
+
+[ext_resource type="Script" uid="uid://56sb14nddcta" path="res://scripts/solver.gd" id="1_bwp7a"]
+[ext_resource type="Script" uid="uid://cv1ukvpx64gx4" path="res://scripts/solving_method.gd" id="2_a78ou"]
+[ext_resource type="Script" uid="uid://2pbwsw03qrmf" path="res://scripts/naive_method.gd" id="3_d2em7"]
+
+[node name="Solver" type="Node2D"]
+script = ExtResource("1_bwp7a")
+
+[node name="SolvingMethod" type="Node2D" parent="."]
+script = ExtResource("2_a78ou")
+
+[node name="NaiveMethod" type="Node2D" parent="SolvingMethod"]
+script = ExtResource("3_d2em7")
