@@ -8,8 +8,7 @@ A simple Minesweeper game built with the Godot Engine.
 - Customizable grid size and mine count
 - Left click to reveal cells
 - Right click to flag/unflag mines
-- Win/loss detection with visual feedback
-- Clean and minimal UI
+- Win/loss detection with visual feedback (to be updated)
 
 ## 🛠️ Built With
 
@@ -28,3 +27,9 @@ A simple Minesweeper game built with the Godot Engine.
    ```bash
    git clone https://github.com/your-username/godot-minesweeper.git
    cd godot-minesweeper
+
+## TO DO
+- Add more methods for solving AI
+- Clean and minimal UI
+- Adding highscore
+- Publish to itch.io
