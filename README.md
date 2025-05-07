@@ -28,6 +28,8 @@ A simple Minesweeper game built with the Godot Engine.
    git clone https://github.com/your-username/godot-minesweeper.git
    cd godot-minesweeper
 
+2. Play on itch.io: https://khoitran20.itch.io/minesweeper-clone
+
 ## TO DO
 - Add more methods for solving AI
 - Clean and minimal UI
